@@ -59,17 +59,21 @@
 
 
 /* ===========================
-   IMÁGENES DE BACKGROUND
+   IMÁGENES DE BACKGROUND - TEMPLATE STACKED
+   ✅ MODIFICADO: 100px x auto
    =========================== */
 .lds-stacked-thumbnail {
-    width: 100% !important;
-    background-size: cover !important;    /* Cubrir todo el div */
+    width: 100px !important;              /* ✅ Ancho fijo de 100px */
+    height: auto !important;              /* ✅ Altura automática */
+    background-size: contain !important;  /* Contener toda la imagen */
     background-position: center !important; /* Centrado */
     background-repeat: no-repeat !important; /* No repetir */
     border-radius: 10px !important;       /* Bordes redondeados */
     box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important; /* Sombra ligera */
     transition: transform 0.3s, box-shadow 0.3s !important;
-    margin: 0 auto !important;            /* Centrar si es necesario */
+    margin: 0 !important;                 /* Sin margen auto */
+    aspect-ratio: 16/9 !important;        /* ✅ Mantiene proporción */
+    flex-shrink: 0 !important;            /* No se encoge */
 }
 
 /* Hover para resaltar la imagen */
