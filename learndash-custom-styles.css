@@ -60,10 +60,10 @@
 
 /* ===========================
    IMÁGENES DE BACKGROUND - TEMPLATE STACKED
-   ✅ MODIFICADO: 100px x auto
+   ✅ MODIFICADO: 130px x auto
    =========================== */
 .lds-stacked-thumbnail {
-    width: 100px !important;              /* ✅ Ancho fijo de 100px */
+    width: 130px !important;              /* ✅ Ancho fijo de 130px */
     height: auto !important;              /* ✅ Altura automática */
     background-size: contain !important;  /* Contener toda la imagen */
     background-position: center !important; /* Centrado */
