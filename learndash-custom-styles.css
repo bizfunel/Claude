@@ -500,18 +500,18 @@ body:not(.is-admin-user) {
 	padding: 20px 0px 20px 20px!important;
 }
 
-/* ✅ MODIFICADO: Miniatura izquierda - Width: 200px, Height: auto */
+/* ✅ MODIFICADO: Miniatura izquierda - Width: 130px, Height: auto */
 .ld-item-list-items.ld-lesson-progression .ld-item-list-item .ld-item-list-item-preview > .lds-grid-banners-thumbnail {
     display: block !important;
-    flex: 0 0 200px !important;        /* ✅ Cambiado de 220px a 200px */
-    width: 200px !important;            /* ✅ Cambiado de 220px a 200px */
-    height: auto !important;            /* ✅ Cambiado de 124px a auto */
+    flex: 0 0 130px !important;        /* ✅ Cambiado a 130px */
+    width: 130px !important;            /* ✅ Cambiado a 130px */
+    height: auto !important;            /* ✅ Altura automática */
     margin: 0 !important;
     border-radius: 10px !important;
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    aspect-ratio: 16/9 !important;      /* ✅ Añadido para mantener proporción */
+    aspect-ratio: 16/9 !important;      /* ✅ Mantiene proporción 16:9 */
 }
 
 .ld-item-list-items.ld-lesson-progression .ld-item-list-item .ld-item-list-item-preview > a.ld-item-name {
@@ -564,10 +564,10 @@ body:not(.is-admin-user) {
         gap: 12px !important;
     }
 
-    /* ✅ MODIFICADO: Reducido de 160px a mantener proporción responsive */
+    /* ✅ MODIFICADO: Ajustado proporcionalmente para tablets */
     .ld-item-list-items.ld-lesson-progression .ld-item-list-item .ld-item-list-item-preview > .lds-grid-banners-thumbnail {
-        flex-basis: 150px !important;   /* ✅ Ajustado para tablets */
-        width: 150px !important;        /* ✅ Ajustado para tablets */
+        flex-basis: 100px !important;   /* ✅ Ajustado a 100px para tablets */
+        width: 100px !important;        /* ✅ Ajustado a 100px para tablets */
         height: auto !important;        /* ✅ Mantiene altura automática */
     }
 }
