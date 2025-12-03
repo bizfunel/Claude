@@ -1,0 +1,590 @@
+/* ==============================
+   COMponente principal - Flex
+   ============================== */
+.ld-item-list-item-preview {
+    display: flex !important;             /* Activamos flexbox */
+    flex-direction: row !important;       /* Horizontal */
+    flex-wrap: nowrap !important;         /* No hacer wrap por defecto */
+    align-items: center !important;       /* Alineación vertical */
+    justify-content: flex-start !important; /* Alineación horizontal */
+    gap: 16px !important;                 /* Espacio entre elementos */
+    padding: 12px 16px !important;        /* Espaciado interno */
+    border: 1px solid #ddd !important;    /* Borde ligero */
+    border-radius: 10px !important;       /* Bordes redondeados */
+    background: #fff !important;          /* Fondo blanco */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important; /* Sombra ligera */
+    transition: transform 0.3s, box-shadow 0.3s !important;
+}
+
+/* Hover para resaltar la tarjeta */
+.ld-item-list-item-preview:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15) !important;
+}
+
+
+
+/* Texto y metadatos a la derecha */
+.ld-item-list-item-preview > a.ld-item-name,
+.ld-item-list-item-preview .ld-item-title,
+.ld-item-list-item-preview .ld-item-components {
+    flex: 1 1 auto !important;           /* Ocupa el espacio restante */
+    min-width: 0 !important;             /* Evita desbordes */
+}
+
+/* Botones/acciones a la derecha */
+.ld-item-list-item-preview > .ld-item-details {
+    margin-left: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+/* Responsive: en pantallas pequeñas, miniatura arriba y texto abajo */
+@media (max-width: 640px) {
+    .ld-item-list-item-preview {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    .ld-item-list-item-preview .lds-stacked-thumbnail {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16/9 !important;
+    }
+    .ld-item-list-item-preview > .ld-item-details {
+        margin-left: 0 !important;
+        margin-top: 8px !important;
+    }
+}
+
+
+/* ===========================
+   IMÁGENES DE BACKGROUND
+   =========================== */
+.lds-stacked-thumbnail {
+    width: 100% !important;
+    background-size: cover !important;    /* Cubrir todo el div */
+    background-position: center !important; /* Centrado */
+    background-repeat: no-repeat !important; /* No repetir */
+    border-radius: 10px !important;       /* Bordes redondeados */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important; /* Sombra ligera */
+    transition: transform 0.3s, box-shadow 0.3s !important;
+    margin: 0 auto !important;            /* Centrar si es necesario */
+}
+
+/* Hover para resaltar la imagen */
+.lds-stacked-thumbnail:hover {
+    transform: scale(1.03) !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
+}
+
+
+
+
+
+/* ===========================
+   ESTILO GENERAL DEL MENÚ DE LECCIONES/TÓPICOS
+   =========================== */
+.ld-table-list.ld-topic-list {
+    background-color: #ffffff !important;      /* Fondo del menú */
+    border: 2px solid #ddd !important;        /* Borde suave */
+    border-radius: 5px !important;
+    padding: 12px !important;
+    transition: all 0.3s ease !important;
+    overflow: hidden !important;
+	margin: 10px !important;
+
+
+	/* Oculta el contenido colapsado */
+}
+
+/* ===========================
+   ESTILO CUANDO ESTÁ COLAPSADO
+   =========================== */
+.ld-table-list.ld-topic-list.collapsed {
+    max-height: 60px !important;               /* Solo mostrar título */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05) !important;
+    cursor: pointer !important;
+}
+
+/* Hover cuando está colapsado */
+.ld-table-list.ld-topic-list.collapsed:hover {
+    background-color: #f9f9f9 !important;
+}
+
+/* ===========================
+   ESTILO CUANDO ESTÁ EXPANDIDO
+   =========================== */
+.ld-table-list.ld-topic-list.expanded {
+    max-height: 2000px !important;             /* Ajusta según tu contenido */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+    background-color: #f8faff !important;
+}
+
+/* ===========================
+   ESTILO DE LOS ITEMS INTERNOS
+   =========================== */
+.ld-table-list.ld-topic-list .ld-table-list-item-preview {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 16px !important;
+    padding: 8px 12px !important;
+    border-bottom: 1px solid #eee !important;
+}
+
+.ld-table-list.ld-topic-list .ld-table-list-item-preview:last-child {
+    border-bottom: none !important;
+}
+
+/* ESTILO DEL TÍTULO */
+.ld-table-list.ld-topic-list .ld-topic-title {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    color: #0C2858 !important;
+}
+
+
+
+/* EFECTO HOVER */
+.ld-table-list.ld-topic-list .ld-table-list-item-preview:hover {
+    background-color: #e8f0ff !important;
+    transform: translateX(2px) !important;
+    transition: all 0.2s ease !important;
+}
+
+
+#ld-item-list-20969 .ld-item-details{
+  margin-left:auto !important;
+}
+#ld-item-list-20969 .ld-expand-button{
+  padding:6px 10px !important;
+  border-radius:8px !important;
+  border:1px solid rgba(0,0,0,.08) !important;
+  background:#f8fafc !important;
+  font-size:12px !important;
+}
+
+
+/* ======================================================
+   ICONOS DE PROGRESO / STATUS - LEARNDASH
+   ====================================================== */
+
+/* Contenedor del icono dentro del card */
+#ld-item-list-20969 .ld-status-icon {
+    position: absolute;          /* Posición sobre la miniatura */
+    left: 10px;                  /* Separación izquierda */
+    bottom: 10px;                /* Separación inferior */
+    top: auto;                   /* Asegura que no tenga top */
+    transform: scale(0.8);       /* Tamaño reducido */
+    z-index: 2;                  /* Encima de la imagen/texto */
+    transition: transform 0.2s, filter 0.2s; /* Animación suave */
+}
+
+/* Hover: interacción visual */
+#ld-item-list-20969 .ld-status-icon:hover {
+    transform: scale(1);         /* Agranda ligeramente */
+    cursor: pointer;             /* Indica que es clicable */
+    filter: brightness(1.2);     /* Leve brillo */
+}
+
+/* Diferentes colores según el estado (ejemplo: pendiente, completado, en progreso) */
+#ld-item-list-20969 .ld-status-icon.completed {
+    color: #28a745; /* Verde */
+}
+
+#ld-item-list-20969 .ld-status-icon.in-progress {
+    color: #ffc107; /* Amarillo */
+}
+
+#ld-item-list-20969 .ld-status-icon.pending {
+    color: #6c757d; /* Gris */
+}
+
+/* ==============================
+   Responsive: móviles
+   ============================== */
+@media (max-width: 640px) {
+    #ld-item-list-20969 .ld-status-icon {
+        left: 8px;
+        bottom: 8px;
+        transform: scale(0.7); /* Más pequeño en pantallas pequeñas */
+    }
+}
+
+/* ==============================
+   Opcional: transición de color según estado
+   ============================== */
+#ld-item-list-20969 .ld-status-icon {
+    transition: transform 0.2s, color 0.2s, filter 0.2s;
+}
+
+
+
+
+
+
+/*************************************************************
+ * 1️⃣ LISTA DE LOGROS (Grid de badges)
+ *************************************************************/
+ul.logros-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+
+ul.logros-lista li {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+ul.logros-lista li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+ul.logros-lista img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+ul.logros-lista strong {
+    display: block;
+    font-size: 16px;
+    color: #333;
+}
+
+/*************************************************************
+ * 2️⃣ ESTILOS DE TÍTULOS Y PROGRESO EN LECCIONES
+ *************************************************************/
+.ld-topic-title {
+    color: #585858 !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #585858 !important; /* Safari fallback */
+}
+
+.ld-topic-title,
+.ld-topic-title a {
+    color: #585858 !important;
+}
+
+.ld-item-title span {
+    color: #333333 !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #333333 !important;
+}
+
+.ld-lesson-list-progress {
+    color: #888888 !important;
+    font-weight: bold !important; /* Negrita solo para porcentaje */
+}
+
+.ld-lesson-list-steps {
+    color: #888888 !important;
+    font-weight: normal !important; /* Sin negrita para pasos */
+}
+
+/*************************************************************
+ * 3️⃣ LAYOUT PRINCIPAL
+ *************************************************************/
+/* Oculta la columna izquierda */
+#secondary.sidebar-left {
+    display: none !important;
+}
+
+/* Expande el contenido principal al 100% */
+#primary.content-area {
+    width: 100% !important;
+    max-width: 100% !important;
+
+}
+
+/*************************************************************
+ * 4️⃣ ESTILOS DEL MENÚ DE USUARIO
+ *************************************************************/
+/* Nombre del usuario en header (blanco por defecto) */
+.user-link .user-name {
+    color: #ffffff !important;
+}
+
+/* Cambia a azul en hover, foco o menú abierto */
+.user-link:hover .user-name,
+.user-link[aria-expanded="true"] .user-name,
+.user-wrap:focus-within .user-link .user-name {
+    color: #0C2858 !important;
+    font-weight: 700 !important;
+}
+
+/* Nombre dentro del menú desplegable: siempre azul */
+.user-wrap .bp-dropdown .user-name,
+.user-wrap .sub-menu .user-name {
+    color: #0C2858 !important;
+    font-weight: 700 !important;
+}
+
+/*************************************************************
+ * 5️⃣ LOGROS EN WIDGETS LATERALES
+ *************************************************************/
+.widget-area.sidebar-right .gamipress-badges-grid {
+    gap: 10px !important;
+    justify-content: center;
+}
+
+.widget-area.sidebar-right .gamipress-badge-item {
+    width: 120px !important;
+    padding: 5px !important;
+    font-size: 10px !important;
+    transform: scale(0.8);
+    transform-origin: center;
+    margin-left: -10px; /* Opcional: ajustar alineación */
+}
+
+.widget-area.sidebar-right .gamipress-badge-item img {
+    max-width: 60px !important;
+    margin-bottom: 5px !important;
+    border-radius: 8px !important;
+}
+
+.widget-area.sidebar-right .gamipress-badge-item h3 {
+    font-size: 16px !important;
+    margin: 5px 0 !important;
+}
+
+.widget-area.sidebar-right .gamipress-badge-item p {
+    font-size: 14px !important;
+}
+
+/* Widget del DASHBOARD */
+body.wbcom-ld-dashboard #secondary.widget-area .gamipress-badges-grid {
+    gap: 10px !important;
+    justify-content: center;
+}
+
+body.wbcom-ld-dashboard #secondary.widget-area .gamipress-badge-item {
+    width: 100px !important;
+    padding: 5px !important;
+    font-size: 10px !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+    background: #fff !important;
+}
+
+body.wbcom-ld-dashboard #secondary.widget-area .gamipress-badge-item img {
+    max-width: 41px !important;
+    margin-bottom: 5px !important;
+    border-radius: 8px !important;
+}
+
+body.wbcom-ld-dashboard #secondary.widget-area .gamipress-badge-item h3 {
+    font-size: 12px !important;
+    margin: 5px 0 !important;
+    color: #002147 !important;
+}
+
+body.wbcom-ld-dashboard #secondary.widget-area .gamipress-badge-item p {
+    font-size: 12px !important;
+}
+
+/* Oculta botón "Apply to be an Instructor" */
+.ld-dashboard-become-instructor-btn {
+    display: none !important;
+}
+
+/*************************************************************
+ * 6️⃣ RESTRICCIONES PARA USUARIOS NO-ADMIN
+ *************************************************************/
+body:not(.is-admin-user) {
+
+    /* Oculta la pestaña "Create a Group" */
+    li#groups-create a,
+    a[href*="/groups/create"] {
+        display: none !important;
+    }
+
+    /* Oculta "All Courses" y mantiene "My Courses" activo */
+    .courses-type-navs .component-navigation #courses-all {
+        display: none !important;
+    }
+    .courses-type-navs .component-navigation #courses-my-courses {
+        display: block !important;
+    }
+    .courses-type-navs .component-navigation #courses-my-courses > a > .bb-component-nav-item-point {
+        color: #0055aa !important;
+    }
+
+    /* Oculta contenido extra */
+    .ld-course-listing-header,
+    .course-filters,
+    .archive-title {
+        display: none !important;
+    }
+
+    /* Solo muestra cursos inscritos */
+    .ld-course-listing__item {
+        display: none !important;
+    }
+    .ld-course-listing__item.learndash-enrolled {
+        display: block !important;
+    }
+}
+
+/*************************************************************
+ * 7️⃣ BOTONES NEWSFEED
+ *************************************************************/
+.nt-newsfeed-buttons {
+    margin: 1.5rem 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.nt-newsfeed-buttons .button.nt-bachiller-btn {
+    background-color: #0073c8;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.nt-newsfeed-buttons .button.nt-bachiller-btn:hover {
+    opacity: 0.9;
+}
+
+/*************************************************************
+ * 8️⃣ BOTÓN "Back to Course"
+ *************************************************************/
+.ld-course-navigation .course-entry-link {
+    background-color: #004480 !important;
+    border: 1px solid #004480 !important;
+    color: #FFFFFF !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    padding: 0.3rem 0.8rem !important;
+    border-radius: 0.375rem !important;
+    text-decoration: none !important;
+    font-weight: 550 !important;
+    font-size: 0.875rem !important;
+    line-height: 1 !important;
+}
+
+.ld-course-navigation .course-entry-link i,
+.ld-course-navigation .course-entry-link span {
+    color: #FFFFFF !important;
+}
+
+.ld-course-navigation .course-entry-link:hover {
+    background-color: #0055AA !important;
+    border-color: #0055AA !important;
+}
+
+/*************************************************************
+ * 9️⃣ LECCIONES Y TÓPICOS - MINIATURAS Y LAYOUT
+ * ✅ MODIFICADO: Width 200px y Height auto
+ *************************************************************/
+.ld-item-list-items.ld-lesson-progression .ld-item-list-item .ld-item-list-item-preview {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 10px !important;
+	padding: 20px 0px 20px 20px!important;
+}
+
+/* ✅ MODIFICADO: Miniatura izquierda - Width: 200px, Height: auto */
+.ld-item-list-items.ld-lesson-progression .ld-item-list-item .ld-item-list-item-preview > .lds-grid-banners-thumbnail {
+    display: block !important;
+    flex: 0 0 200px !important;        /* ✅ Cambiado de 220px a 200px */
+    width: 200px !important;            /* ✅ Cambiado de 220px a 200px */
+    height: auto !important;            /* ✅ Cambiado de 124px a auto */
+    margin: 0 !important;
+    border-radius: 10px !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    aspect-ratio: 16/9 !important;      /* ✅ Añadido para mantener proporción */
+}
+
+.ld-item-list-items.ld-lesson-progression .ld-item-list-item .ld-item-list-item-preview > a.ld-item-name {
+    order: 2 !important;
+    flex: 1 1 auto !important;
+    display: block !important;
+}
+
+.ld-item-list-items.ld-lesson-progression .ld-item-list-item .ld-item-title {
+    margin-top: 0 !important;
+}
+
+.ld-item-list-items.ld-lesson-progression .ld-item-list-item .ld-item-list-item-preview > .ld-item-details {
+    order: 2 !important;
+    margin-left: auto !important;
+    align-self: center !important;
+}
+
+/* Tópicos y quizzes */
+.ld-table-list .ld-table-list-item .ld-table-list-item-preview {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+}
+
+.ld-table-list .ld-table-list-item .ld-table-list-item-preview > .lds-grid-banners-thumbnail {
+    display:block !important;
+    flex: 0 0 160px !important;
+    width:160px !important;
+    height:90px !important;
+    margin:0 !important;
+    border-radius:8px !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+.ld-table-list .ld-table-list-item .ld-table-list-item-preview > .ld-topic-title,
+.ld-table-list .ld-table-list-item .ld-table-list-item-preview > .ld-item-title {
+    flex: 1 1 auto !important;
+}
+
+/*************************************************************
+ *  🔟 RESPONSIVE
+ *  ✅ MODIFICADO: Ajustado para el nuevo tamaño
+ *************************************************************/
+@media (max-width: 768px){
+    .ld-item-list-items.ld-lesson-progression .ld-item-list-item .ld-item-list-item-preview,
+    .ld-table-list .ld-table-list-item .ld-table-list-item-preview {
+        gap: 12px !important;
+    }
+
+    /* ✅ MODIFICADO: Reducido de 160px a mantener proporción responsive */
+    .ld-item-list-items.ld-lesson-progression .ld-item-list-item .ld-item-list-item-preview > .lds-grid-banners-thumbnail {
+        flex-basis: 150px !important;   /* ✅ Ajustado para tablets */
+        width: 150px !important;        /* ✅ Ajustado para tablets */
+        height: auto !important;        /* ✅ Mantiene altura automática */
+    }
+}
+
+/* Mobile ultra-responsive (tarjetas verticales) */
+@media (max-width: 640px){
+    #ld-item-list-20969 .ld-item-list-item-preview{
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    #ld-item-list-20969 .lds-stacked-thumbnail {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16/9 !important;
+    }
+    #ld-item-list-20969 .ld-status-icon {
+        left: 12px !important;
+        bottom: 12px !important;
+    }
+}
