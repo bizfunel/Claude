@@ -1,5 +1,6 @@
 /* ==============================
    COMponente principal - Flex
+   ✅ MODIFICADO: 130px ancho total
    ============================== */
 .ld-item-list-item-preview {
     display: flex !important;             /* Activamos flexbox */
@@ -7,8 +8,10 @@
     flex-wrap: nowrap !important;         /* No hacer wrap por defecto */
     align-items: center !important;       /* Alineación vertical */
     justify-content: flex-start !important; /* Alineación horizontal */
-    gap: 16px !important;                 /* Espacio entre elementos */
-    padding: 12px 16px !important;        /* Espaciado interno */
+    gap: 8px !important;                  /* ✅ Reducido para compactar */
+    padding: 8px !important;              /* ✅ Reducido para compactar */
+    width: 130px !important;              /* ✅ Ancho fijo de 130px */
+    max-width: 130px !important;          /* ✅ Máximo 130px */
     border: 1px solid #ddd !important;    /* Borde ligero */
     border-radius: 10px !important;       /* Bordes redondeados */
     background: #fff !important;          /* Fondo blanco */
@@ -24,20 +27,37 @@
 
 
 
-/* Texto y metadatos a la derecha */
+/* Texto y metadatos - Compacto 130px */
 .ld-item-list-item-preview > a.ld-item-name,
 .ld-item-list-item-preview .ld-item-title,
 .ld-item-list-item-preview .ld-item-components {
     flex: 1 1 auto !important;           /* Ocupa el espacio restante */
     min-width: 0 !important;             /* Evita desbordes */
+    font-size: 10px !important;          /* ✅ Texto más pequeño */
+    line-height: 1.2 !important;         /* ✅ Altura de línea compacta */
+    overflow: hidden !important;         /* ✅ Oculta el desborde */
 }
 
-/* Botones/acciones a la derecha */
+.ld-item-list-item-preview .ld-item-title span {
+    display: block !important;
+    white-space: nowrap !important;      /* ✅ No rompe línea */
+    overflow: hidden !important;         /* ✅ Oculta desborde */
+    text-overflow: ellipsis !important;  /* ✅ Añade ... */
+    max-width: 100% !important;
+}
+
+/* Ícono de estado - Compacto */
+.ld-item-list-item-preview .ld-status-icon {
+    transform: scale(0.6) !important;    /* ✅ Más pequeño */
+    position: absolute !important;
+    left: 2px !important;                /* ✅ Muy cerca del borde */
+    top: 2px !important;                 /* ✅ Esquina superior */
+    z-index: 10 !important;
+}
+
+/* Botones/acciones - Ocultos en modo compacto */
 .ld-item-list-item-preview > .ld-item-details {
-    margin-left: auto !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
+    display: none !important;            /* ✅ Oculta botones para ahorrar espacio */
 }
 
 /* Responsive: en pantallas pequeñas, miniatura arriba y texto abajo */
@@ -60,19 +80,19 @@
 
 /* ===========================
    IMÁGENES DE BACKGROUND - TEMPLATE STACKED
-   ✅ MODIFICADO: 130px x auto
+   ✅ MODIFICADO: 40px x auto para layout compacto
    =========================== */
 .lds-stacked-thumbnail {
-    width: 130px !important;              /* ✅ Ancho fijo de 130px */
-    height: auto !important;              /* ✅ Altura automática */
-    background-size: contain !important;  /* Contener toda la imagen */
+    width: 40px !important;               /* ✅ Reducido a 40px para layout horizontal */
+    height: 40px !important;              /* ✅ Altura fija para compacto */
+    min-width: 40px !important;           /* ✅ Mínimo 40px */
+    background-size: cover !important;    /* Cubrir el espacio */
     background-position: center !important; /* Centrado */
     background-repeat: no-repeat !important; /* No repetir */
-    border-radius: 10px !important;       /* Bordes redondeados */
+    border-radius: 6px !important;        /* Bordes redondeados */
     box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important; /* Sombra ligera */
     transition: transform 0.3s, box-shadow 0.3s !important;
     margin: 0 !important;                 /* Sin margen auto */
-    aspect-ratio: 16/9 !important;        /* ✅ Mantiene proporción */
     flex-shrink: 0 !important;            /* No se encoge */
 }
 
